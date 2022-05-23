@@ -12,7 +12,7 @@ namespace Clases
         private List<String> l_titulos;
         private string area = "";
 
-        public Docente(string nombre, uint id, uint fecha_nacimiento) : base(nombre, id, fecha_nacimiento)
+        public Docente(string nombre, string id, string fecha_nacimiento, string Area) : base(nombre, id, fecha_nacimiento)
         {
         }
 

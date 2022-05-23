@@ -10,10 +10,10 @@ namespace Clases
     {
 
         private string nombre;
-        private uint id;
-        private uint fecha_nacimiento;
+        private string id;
+        private string fecha_nacimiento;
 
-        public Miembro(string nombre, uint id, uint fecha_nacimiento)
+        public Miembro(string nombre, string id, string fecha_nacimiento)
         {
         }
     }

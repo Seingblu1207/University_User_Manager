@@ -202,6 +202,8 @@ namespace Clases
                 string Id = "";
                 string F_nacimiento = "";
                 bool ApoyoB = true;
+                string Area = "";
+                string ApoyoS = "";
 
                 while (ApoyoB)
                 {
@@ -229,12 +231,27 @@ namespace Clases
                                     if (!string.IsNullOrEmpty(F_nacimiento) && !string.IsNullOrWhiteSpace(F_nacimiento))
                                     {
 
-                                        ApoyoB = false;
+                                        while (string.IsNullOrEmpty(Area) || string.IsNullOrWhiteSpace(Area))
+                                        {
 
+                                            Console.WriteLine("¿En que area enseña el nuevo docente?");
+                                            Id = Console.ReadLine();
+
+                                            if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
+                                            {
+
+                                                Console.WriteLine("Lihto");
+                                                Console.ReadLine();
+
+                                            }
+
+                                            else Console.WriteLine("ERROR: Por favor ingrese un Area");
+
+                                        }
 
                                     }
 
-                                    else Console.WriteLine("ERROR: Por favor ingrese un id valido");
+                                    else Console.WriteLine("ERROR: Por favor ingrese una fecha de nacimiento");
 
                                 }
 
@@ -248,8 +265,6 @@ namespace Clases
 
                     else Console.WriteLine("ERROR: Por favor ingrese un nombre valido");
                 }
-                
-                Docente a = new Docente(null, 0U, 0U);
 
             }
 
