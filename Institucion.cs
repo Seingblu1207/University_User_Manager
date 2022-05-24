@@ -6,32 +6,22 @@ namespace Clases
     internal class Institucion
     {
 
-        private List<Evaluacion> l_evaluacion;
-        private List<Docente> l_docente;
-        private List<Pregrado> l_pregrado;
-        private List<Postgrado> l_postgrado;
-        private List<Historia> l_Historia;
-        private List<Asignatura> l_Asignatura;
-        int count_docente = 0;
-
-        internal List<Evaluacion> L_evaluacion { get => l_evaluacion; set => l_evaluacion = value; }
-        internal List<Docente> L_docente { get => l_docente; set => l_docente = value; }
-        internal List<Pregrado> L_pregrado { get => l_pregrado; set => l_pregrado = value; }
-        internal List<Postgrado> L_postgrado { get => l_postgrado; set => l_postgrado = value; }
-        internal List<Historia> L_Historia { get => l_Historia; set => l_Historia = value; }
-        internal List<Asignatura> L_Asignatura { get => l_Asignatura; set => l_Asignatura = value; }
-        public int Count_docente { get => count_docente; set => count_docente = value; }
-
-
-
+        static private List<Evaluacion> l_evaluacion;
+        static private List<Docente> l_docente;
+        static private List<Pregrado> l_pregrado;
+        static private List<Postgrado> l_postgrado;
+        static private List<Historia> l_Historia;
+        static private List<Asignatura> l_Asignatura;
+        static public int count_docente = 0;
+        static Institucion Aguardiente = new Institucion();
 
         //Main que llama al menú
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Menu();
         }
 
-        static void Menu() {
+        public static void Menu() {
 
             //Variables apoyo
             string ApoyoS = "";
@@ -113,6 +103,9 @@ namespace Clases
                               "\n 10. Modificar los datos de una Asignatura" +
                               "\n 0. Volver al menu anterior");
             ApoyoS = Console.ReadLine();
+           
+
+            
 
             //Comprueba constantemente si la opcion es valida
             do
@@ -207,10 +200,10 @@ namespace Clases
                 string Area = "";
                 string ApoyoS = "";
 
-                Console.WriteLine("eo");
+
                 while(ApoyoB)
                 {
-                    Console.WriteLine("eo 2");
+
                     Console.WriteLine("¿Cual es el nombre del nuevo docente?");
                     Name = Console.ReadLine();
 
@@ -222,6 +215,7 @@ namespace Clases
 
                             Console.WriteLine("¿Cual es el id del nuevo docente?");
                             Id = Console.ReadLine();
+                            
 
                             if (!string.IsNullOrEmpty(Id) && !string.IsNullOrWhiteSpace(Id))
                             {
@@ -244,8 +238,7 @@ namespace Clases
                                             if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
                                             {
 
-                                                Console.WriteLine("Lihto");
-                                                Console.ReadLine();
+                                                
 
                                             }
 
@@ -290,12 +283,13 @@ namespace Clases
 
         public static void Menu_Docente()
         {
-
         }
 
         public static void Menu_Estudiante()
         {
 
         }
+
+
     } 
 }
