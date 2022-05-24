@@ -67,7 +67,8 @@ namespace Clases
 
                     case "3":
                         Console.Clear();
-                        Menu_Estudiante();
+                        //Menu_Estudiante();
+                        aaa.MenuRequisito();
                         Error = false;
                         break;
 
@@ -173,6 +174,7 @@ namespace Clases
 
                     case "0":
                         Error = false;
+                        Console.Clear();
                         Menu();
                         break;
 
@@ -205,8 +207,10 @@ namespace Clases
                 string Area = "";
                 string ApoyoS = "";
 
-                while (ApoyoB)
+                Console.WriteLine("eo");
+                while(ApoyoB)
                 {
+                    Console.WriteLine("eo 2");
                     Console.WriteLine("¿Cual es el nombre del nuevo docente?");
                     Name = Console.ReadLine();
 
@@ -226,7 +230,7 @@ namespace Clases
                                 {
 
                                     Console.WriteLine("¿Cual es la fecha de nacimiento del nuevo docente?");
-                                    Id = Console.ReadLine();
+                                    F_nacimiento = Console.ReadLine();
 
                                     if (!string.IsNullOrEmpty(F_nacimiento) && !string.IsNullOrWhiteSpace(F_nacimiento))
                                     {
@@ -235,7 +239,7 @@ namespace Clases
                                         {
 
                                             Console.WriteLine("¿En que area enseña el nuevo docente?");
-                                            Id = Console.ReadLine();
+                                            Area = Console.ReadLine();
 
                                             if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
                                             {
@@ -264,9 +268,23 @@ namespace Clases
                     }
 
                     else Console.WriteLine("ERROR: Por favor ingrese un nombre valido");
+
+                    ApoyoB = false;
+                }
+
+                Console.WriteLine("¿Desea crear otro docente?");
+                ApoyoS = Console.ReadLine();
+
+                ApoyoS.ToLower();
+
+                if(ApoyoS != "si")
+                {
+                    sigo = false;
                 }
 
             }
+
+            Menu_Admin();
 
         }
 

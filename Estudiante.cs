@@ -11,7 +11,7 @@ namespace Clases
 
         private string nombre_acudiente;
 
-        public Estudiante(string nombre, uint id, uint fecha_nacimiento, string nombre_acudiente) : base(nombre, id, fecha_nacimiento)
+        public Estudiante(string nombre, string id, string fecha_nacimiento, string nombre_acudiente) : base(nombre, id, fecha_nacimiento)
         {
         }
     }

@@ -11,7 +11,7 @@ namespace Clases
 
         private string[,] datos = new string[4, 5];
 
-        public Postgrado(string nombre, uint id, uint fecha_nacimiento, string nombre_acudiente, string[,] datos) : base(nombre, id, fecha_nacimiento, nombre_acudiente)
+        public Postgrado(string nombre, string id, string fecha_nacimiento, string nombre_acudiente, string[,] datos) : base(nombre, id, fecha_nacimiento, nombre_acudiente)
         {
         }
 
