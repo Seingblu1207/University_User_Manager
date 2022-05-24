@@ -7,6 +7,8 @@ namespace Clases
     internal class Institucion
     {
 
+
+        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         static private List<Evaluacion> l_evaluacion;
         static private List<Docente> l_docente;
         static private List<Pregrado> l_pregrado;
@@ -237,6 +239,7 @@ namespace Clases
                                     {
                                         string Var_Name = Name + Id + F_nacimiento + Area;
                                         Docente docente = new Docente(Name, Id, F_nacimiento, Area);
+                                        
                                     }
 
                                     else Console.WriteLine("ERROR: Por favor ingrese un Area");
@@ -299,6 +302,8 @@ namespace Clases
             Postgrado postgrado;
 
             string linea = archivo.ReadLine();
+
+            l_docente.Clear();
 
 
             while (linea != null) {
