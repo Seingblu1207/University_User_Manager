@@ -41,6 +41,7 @@ namespace Clases
 
                         mal = true;
                         Console.WriteLine("Seleccione una de las opciones mostradas");
+                        opcion = Console.ReadLine();
                         break;
 
                 }
@@ -103,6 +104,7 @@ namespace Clases
                 else
                 {
                     Console.WriteLine("ERROR: Por favor ingrese un monitor valido");
+                    monitor = Console.ReadLine();
                     mal = true;
                 }
 
@@ -194,6 +196,7 @@ namespace Clases
                                         }
 
                                         else Console.WriteLine("ERROR: Por favor ingrese un evaluador valido");
+                                        evaluador2 = Console.ReadLine();
                                         mal = true;
 
                                     }
@@ -202,6 +205,7 @@ namespace Clases
                                 }
 
                                 else Console.WriteLine("ERROR: Por favor ingrese un evaluador valido");
+                                evaluador1 = Console.ReadLine();
                                 mal = true;
                             }
                             while (mal);
@@ -209,6 +213,7 @@ namespace Clases
                         }
 
                         else Console.WriteLine("ERROR: Por favor ingrese director valido");
+                        director = Console.ReadLine();
                         mal = true;
                     }
                     while (mal);
@@ -216,6 +221,7 @@ namespace Clases
                 }
 
                 else Console.WriteLine("ERROR: Por favor ingrese un titulo valido");
+                titulo = Console.ReadLine();
                 mal = true;
             }
             while (mal);

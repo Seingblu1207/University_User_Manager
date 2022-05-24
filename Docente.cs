@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    internal class Docente : Miembro
+    internal class Docente : Miembro 
     {
 
         private List<String> l_titulos;

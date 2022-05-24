@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Clases
 {
@@ -13,6 +14,7 @@ namespace Clases
         static private List<Historia> l_Historia;
         static private List<Asignatura> l_Asignatura;
         static public int count_docente = 0;
+        static public int count_estudiante = 0;
         static Institucion Aguardiente = new Institucion();
 
         //Main que llama al menú
@@ -58,7 +60,7 @@ namespace Clases
                     case "3":
                         Console.Clear();
                         //Menu_Estudiante();
-                        aaa.MenuRequisito();
+                        Cargar_Docentes();
                         Error = false;
                         break;
 
@@ -190,16 +192,18 @@ namespace Clases
         public static void Menu_Create_Docente() {
 
             bool sigo = true;
+            string ApoyoS = "";
 
             while (sigo)
             {
+
                 string Name;
                 string Id = "";
                 string F_nacimiento = "";
                 bool ApoyoB = true;
                 string Area = "";
-                string ApoyoS = "";
 
+                Console.Clear();
 
                 while(ApoyoB)
                 {
@@ -210,69 +214,53 @@ namespace Clases
                     if (!string.IsNullOrEmpty(Name) && !string.IsNullOrWhiteSpace(Name))
                     {
 
-                        while (string.IsNullOrEmpty(Id) || string.IsNullOrWhiteSpace(Id))
+                        count_docente++;                            
+
+                        while (string.IsNullOrEmpty(F_nacimiento) || string.IsNullOrWhiteSpace(F_nacimiento))
                         {
 
-                            Console.WriteLine("¿Cual es el id del nuevo docente?");
-                            Id = Console.ReadLine();
-                            
+                            Console.WriteLine("¿Cual es la fecha de nacimiento del nuevo docente?");
+                            F_nacimiento = Console.ReadLine();
 
-                            if (!string.IsNullOrEmpty(Id) && !string.IsNullOrWhiteSpace(Id))
+                            if (!string.IsNullOrEmpty(F_nacimiento) && !string.IsNullOrWhiteSpace(F_nacimiento))
                             {
 
-                                while (string.IsNullOrEmpty(F_nacimiento) || string.IsNullOrWhiteSpace(F_nacimiento))
+                                while (string.IsNullOrEmpty(Area) || string.IsNullOrWhiteSpace(Area))
                                 {
 
-                                    Console.WriteLine("¿Cual es la fecha de nacimiento del nuevo docente?");
-                                    F_nacimiento = Console.ReadLine();
+                                    Console.WriteLine("¿En que area enseña el nuevo docente?");
+                                    Area = Console.ReadLine();
 
-                                    if (!string.IsNullOrEmpty(F_nacimiento) && !string.IsNullOrWhiteSpace(F_nacimiento))
+                                    if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
                                     {
-
-                                        while (string.IsNullOrEmpty(Area) || string.IsNullOrWhiteSpace(Area))
-                                        {
-
-                                            Console.WriteLine("¿En que area enseña el nuevo docente?");
-                                            Area = Console.ReadLine();
-
-                                            if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
-                                            {
-
-                                                
-
-                                            }
-
-                                            else Console.WriteLine("ERROR: Por favor ingrese un Area");
-
-                                        }
-
+                                        string Var_Name = Name + Id + F_nacimiento + Area;
+                                        Docente docente = new Docente(Name, Id, F_nacimiento, Area);
                                     }
 
-                                    else Console.WriteLine("ERROR: Por favor ingrese una fecha de nacimiento");
+                                    else Console.WriteLine("ERROR: Por favor ingrese un Area");
 
                                 }
 
                             }
 
-                            else Console.WriteLine("ERROR: Por favor ingrese un id valido");
+                            else Console.WriteLine("ERROR: Por favor ingrese una fecha de nacimiento");
 
                         }
 
                     }
 
                     else Console.WriteLine("ERROR: Por favor ingrese un nombre valido");
-
-                    ApoyoB = false;
                 }
 
-                Console.WriteLine("¿Desea crear otro docente?");
+                Console.WriteLine("¿Desea crear otro docente? \n si para continuar \n Cualquier otro texto para salir");
                 ApoyoS = Console.ReadLine();
 
                 ApoyoS.ToLower();
 
-                if(ApoyoS != "si")
+                if (ApoyoS != "si")
                 {
                     sigo = false;
+                    Console.Clear();
                 }
 
             }
@@ -290,6 +278,49 @@ namespace Clases
 
         }
 
+        public static void Cargar_Docentes()
+        {
 
+            StreamReader archivo = new StreamReader("C:\\Users\\oveor\\Desktop\\TAREASSSSS\\TEORIA DE LA COMPUTACION\\Codde\\Clases\\recursos\\TextFile1.txt");
+            
+            string[] v_miembros;
+            Docente docente;
+            Pregrado pregrado;
+            Postgrado postgrado;
+            string linea = archivo.ReadLine();
+
+            while (linea != null) {
+
+                v_miembros = linea.Split('|');
+
+                if (v_miembros[0].ToUpper() == "D") {
+
+                    docente = new Docente(v_miembros[1], v_miembros[2], v_miembros[3], v_miembros[4]);
+
+                    for (int i = v_miembros.Length - 6; i >= 0; i--)
+                    {
+
+                        docente.L_titulos.Add(v_miembros[i+5]);
+
+                    }
+
+                    for (int a = v_miembros.Length -6 ; a >= 0; a--)
+                    {
+                        Console.WriteLine(docente.L_titulos[a]);
+                    }
+
+                    l_docente.Add(docente);
+
+                }
+
+                else if (v_miembros[0].ToUpper() == "P") {
+
+                    
+
+                }
+
+                linea = archivo.ReadLine();
+            }
+        }
     } 
 }
