@@ -281,13 +281,18 @@ namespace Clases
         public static void Cargar_Docentes()
         {
 
-            StreamReader archivo = new StreamReader("C:\\Users\\oveor\\Desktop\\TAREASSSSS\\TEORIA DE LA COMPUTACION\\Codde\\Clases\\recursos\\TextFile1.txt");
-            
+            var text = "C:\\Users\\oveor\\Desktop\\TAREASSSSS\\TEORIA DE LA COMPUTACION\\Codde\\Clases\\recursos\\TextFile1.txt";
+
+            StreamReader archivo = new StreamReader(text);
+            StreamWriter archivo2 = new StreamWriter(text);
+
             string[] v_miembros;
             Docente docente;
             Pregrado pregrado;
             Postgrado postgrado;
+
             string linea = archivo.ReadLine();
+
 
             while (linea != null) {
 
