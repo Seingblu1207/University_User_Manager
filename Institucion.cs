@@ -8,8 +8,7 @@ namespace Clases
     {
 
 
-        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        //bbbbbbbbbbbbbbbbbbbbbb
+        
         static private List<Evaluacion> l_evaluacion;
         static private List<Docente> l_docente;
         static private List<Pregrado> l_pregrado;

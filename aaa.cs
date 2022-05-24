@@ -98,7 +98,7 @@ namespace Clases
             Console.WriteLine("Ingrese el nombre del monitor:");
             monitor = Console.ReadLine();
 
-            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            
 
             do
             {
