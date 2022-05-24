@@ -9,11 +9,11 @@ namespace Clases
     internal class Evaluacion
     {
 
-        private Estudiante estudiante;
-        private Asignatura asignatura;
+        private string estudiante;
+        private string asignatura;
         private double nota_final;
 
-        public Evaluacion(Estudiante estudiante, Asignatura asignatura, double nota_final)
+        public Evaluacion(string estudiante, string asignatura, double nota_final)
         {
             this.estudiante = estudiante;
             this.asignatura = asignatura;
@@ -21,7 +21,7 @@ namespace Clases
         }
 
         public double Nota_final { get => nota_final; set => nota_final = value; }
-        internal Estudiante Estudiante { get => estudiante; set => estudiante = value; }
-        internal Asignatura Asignatura { get => asignatura; set => asignatura = value; }
+        internal string Estudiante { get => estudiante; set => estudiante = value; }
+        internal string Asignatura { get => asignatura; set => asignatura = value; }
     }
 }

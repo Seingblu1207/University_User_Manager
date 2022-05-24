@@ -20,6 +20,7 @@ namespace Clases
         }
 
         public uint Año { get => año; set => año = value; }
+        public List<Evaluacion> L_evaluacion { get => l_evaluacion; }
         public ushort Periodo { get => periodo; set => periodo = value; }
     }
 }

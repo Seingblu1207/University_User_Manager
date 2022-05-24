@@ -23,5 +23,7 @@ namespace Clases
         public uint Grado { get => grado; set => grado = value; }
         internal List<Docente> L_docentes { get => l_docentes;}
 
+
+
     }
 }
