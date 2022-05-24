@@ -13,11 +13,11 @@ namespace Clases
 
             string requisito = "";
 
-            //Booleano para identificar si la opción seleccionada fue correcta (Hay varios repartidos por el codigo)
+            //Booleano para identificar si la opción seleccionada fue correcta
             Boolean mal = false;
 
             //Imprimimos el menú y leemos la opción.
-            Console.WriteLine("1. pregrado - 2. posgrado");//No hecho el menú bonito jaja, ayudame con eso
+            Console.WriteLine("1. pregrado - 2. posgrado");
             string opcion = Console.ReadLine();
 
             //Ciclo dowhile para que entre al switch, si hay una opción incorrecta repetirá el ciclo, sino saldrá sin problemas
@@ -95,10 +95,14 @@ namespace Clases
 
             mal = false;
 
+            Console.WriteLine("Ingrese el nombre del monitor:");
+            monitor = Console.ReadLine();
+
+            //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
             do
             {
-                Console.WriteLine("Ingrese el nombre del monitor:");
-                monitor = Console.ReadLine();
+                
                 if (!string.IsNullOrEmpty(monitor) && !string.IsNullOrWhiteSpace(monitor))
                     mal = false;
                 else
