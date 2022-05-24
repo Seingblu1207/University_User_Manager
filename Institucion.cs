@@ -87,6 +87,8 @@ namespace Clases
         public static void Menu_Admin()
         {
 
+            //Recorrer historia
+
             //Variables apoyo
             string ApoyoS = "";
             bool Error = false;
@@ -271,10 +273,15 @@ namespace Clases
 
         public static void Menu_Docente()
         {
+
+            //Reportar evaluaciones
+
         }
 
         public static void Menu_Estudiante()
         {
+
+            //consultar en historial SU evaluacion
 
         }
 
