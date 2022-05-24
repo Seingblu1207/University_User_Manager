@@ -7,13 +7,10 @@ namespace Clases
     internal class Institucion
     {
 
-
-        
         static private List<Evaluacion> l_evaluacion;
         static private List<Docente> l_docente;
         static private List<Pregrado> l_pregrado;
         static private List<Postgrado> l_postgrado;
-        static private List<Historia> l_Historia;
         static private List<Asignatura> l_Asignatura;
         static public int count_docente = 0;
         static public int count_estudiante = 0;
@@ -98,15 +95,10 @@ namespace Clases
             Console.WriteLine("BIENVENIDO AL SISTEMA DE ADMINISTRACION" +
                               "\n \n Ingrese el numero de la función que quiere realizar" +
                               "\n 1. Crear un nuevo docente" +
-                              "\n 2. Modificar los datos de un docente" +
-                              "\n 3. Crear un nuevo estudiante de Pregrado" +
-                              "\n 4. Modificar los datos de un estudiante de Pregrado" + 
-                              "\n 5. Crear un nuevo estudiante de postgrado" +
-                              "\n 6. Modificar los datos de un estudiante de postgrado" + 
-                              "\n 7. Crear un nuevo Historial evaluativo" +
-                              "\n 8. Modificar los datos de un Historial evaluativo" + 
-                              "\n 9. Crear una nueva Asignatura" +
-                              "\n 10. Modificar los datos de una Asignatura" +
+                              "\n 2. Crear un nuevo estudiante de Pregrado" +
+                              "\n 3. Crear un nuevo estudiante de postgrado" +
+                              "\n 4. Crear un nuevo Historial evaluativo" +
+                              "\n 5. Crear una nueva Asignatura" +
                               "\n 0. Volver al menu anterior");
             ApoyoS = Console.ReadLine();
            
@@ -146,31 +138,6 @@ namespace Clases
                         Error = false;
                         break;
 
-                    case "6":
-                        Console.Clear();
-                        Error = false;
-                        break;
-
-                    case "7":
-                        Console.Clear();
-                        Error = false;
-                        break;
-
-                    case "8":
-                        Console.Clear();
-                        Error = false;
-                        break;
-
-                    case "9":
-                        Console.Clear();
-                        Error = false;
-                        break;
-
-                    case "10":
-                        Console.Clear();
-                        Error = false;
-                        break;
-
                     case "0":
                         Error = false;
                         Console.Clear();
@@ -197,6 +164,10 @@ namespace Clases
 
             bool sigo = true;
             string ApoyoS = "";
+
+            var text = "C:\\Users\\oveor\\Desktop\\TAREASSSSS\\TEORIA DE LA COMPUTACION\\Codde\\Clases\\recursos\\TextFile1.txt";
+
+            StreamWriter archivo = new StreamWriter(text);
 
             while (sigo)
             {
@@ -237,8 +208,10 @@ namespace Clases
 
                                     if (!string.IsNullOrEmpty(Area) && !string.IsNullOrWhiteSpace(Area))
                                     {
-                                        string Var_Name = Name + Id + F_nacimiento + Area;
-                                        Docente docente = new Docente(Name, Id, F_nacimiento, Area);
+                                        
+                                        ApoyoS = "D|" + Name + "|" + Id + "|" + F_nacimiento + "|" + Area + "|";
+
+                                        archivo.WriteLine(ApoyoS);
                                         
                                     }
 
