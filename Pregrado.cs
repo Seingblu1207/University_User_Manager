@@ -9,7 +9,7 @@ namespace Clases
     internal class Pregrado : Estudiante
     {
         
-        private string[] datos = new string[4];
+        private string[] datos = new string[3];
 
         public Pregrado(string nombre, string id, string fecha_nacimiento, string nombre_acudiente, string[] datos) : base(nombre, id, fecha_nacimiento, nombre_acudiente)
         {
