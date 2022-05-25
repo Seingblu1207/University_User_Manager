@@ -119,6 +119,7 @@ namespace Clases
 
                     case "2":
                         Console.Clear();
+                        Menu_Create_Pregrado();
                         Error = false;
                         break;
 
@@ -281,15 +282,15 @@ namespace Clases
             bool ApoyoB = true;
 
             Console.Clear();
-
+            Console.WriteLine("a");
             while (ApoyoB)
             {
-
+                Console.WriteLine("a");
                 string Name;
                 string Id = "";
                 string F_nacimiento = "";
                 string Nombre_Acudiente = "";
-                int Año = 2010;
+                int Año = 1;
                 string Colegio = "";
                 string titulo = "";
                 
@@ -299,10 +300,10 @@ namespace Clases
 
                 Console.WriteLine("¿Cual es el nombre del nuevo estudiante?");
                 Name = Console.ReadLine();
-
+                Console.WriteLine("a2");
                 if (!string.IsNullOrEmpty(Name) && !string.IsNullOrWhiteSpace(Name))
                 {
-
+                    Console.WriteLine("a3");
                     count_estudiante++;
 
                     while (string.IsNullOrEmpty(F_nacimiento) || string.IsNullOrWhiteSpace(F_nacimiento) || !DateTime.TryParse(F_nacimiento, out ApoyoD))
@@ -332,20 +333,21 @@ namespace Clases
                                         if (!string.IsNullOrEmpty(Colegio) && !string.IsNullOrWhiteSpace(Colegio))
                                         {
 
-                                            while ( Año <= 2010 || Año >= 2023)
+                                            while (Año <= 2000 || Año >= 2023)
                                             {
 
                                                 Console.WriteLine("¿En que año fue egresado?");
-                                                Colegio = Console.ReadLine();
-
-                                                if (Año > 2010 && Año < 2023)
+                                                ApoyoS = Console.ReadLine();
+                                                Año = int.Parse(ApoyoS);
+                                                
+                                                if (Año > 2000 && Año < 2023)
                                                 {
 
                                                     while (string.IsNullOrEmpty(titulo) || string.IsNullOrWhiteSpace(titulo))
                                                     {
 
-                                                        Console.WriteLine("¿Cual es el titulo que consiguio al gradiarse?");
-                                                        Colegio = Console.ReadLine();
+                                                        Console.WriteLine("¿Cual es el titulo que consiguio al graduarse?");
+                                                        titulo = Console.ReadLine();
 
                                                         if (!string.IsNullOrEmpty(titulo) && !string.IsNullOrWhiteSpace(titulo))
                                                         {
@@ -371,7 +373,7 @@ namespace Clases
 
                                                 }
 
-                                                else Console.WriteLine("ERROR: Por favor ingrese un año valido (2011-2022)");
+                                                else Console.WriteLine("ERROR: Por favor ingrese un año valido (2001-2022)");
 
                                             }
 
@@ -412,6 +414,177 @@ namespace Clases
             }
 
             else Menu_Create_Pregrado();
+
+        }
+
+        public static void Menu_Create_Postgrado()
+        {
+
+            Console.Clear();
+            bool sigo = true;
+            string ApoyoS = "";
+
+
+            bool ApoyoB = true;
+
+            Console.Clear();
+            Console.WriteLine("a");
+            while (ApoyoB)
+            {
+                Console.WriteLine("a");
+                string Name;
+                string Id = "";
+                string F_nacimiento = "";
+                string Nombre_Acudiente = "";
+                int Año = 1;
+                string Institucion = "";
+                string titulo = "";
+                string[,] Titulos = new string[3, 5];
+
+                ApoyoS = "";
+                DateTime ApoyoD;
+                int ApoyoI;
+
+
+                Console.WriteLine("¿Cual es el nombre del nuevo estudiante?");
+                Name = Console.ReadLine();
+                Console.WriteLine("a2");
+                if (!string.IsNullOrEmpty(Name) && !string.IsNullOrWhiteSpace(Name))
+                {
+                    Console.WriteLine("a3");
+                    count_estudiante++;
+
+                    while (string.IsNullOrEmpty(F_nacimiento) || string.IsNullOrWhiteSpace(F_nacimiento) || !DateTime.TryParse(F_nacimiento, out ApoyoD))
+                    {
+
+                        Console.WriteLine("¿Cual es la fecha de nacimiento del nuevo estudiante? (dd/MM/yyyy) INCLUYENDO LOS '/'");
+                        F_nacimiento = Console.ReadLine();
+
+                        if (!string.IsNullOrEmpty(F_nacimiento) && !string.IsNullOrWhiteSpace(F_nacimiento) && DateTime.TryParse(F_nacimiento, out ApoyoD))
+                        {
+
+                            while (string.IsNullOrEmpty(Nombre_Acudiente) || string.IsNullOrWhiteSpace(Nombre_Acudiente))
+                            {
+
+                                Console.WriteLine("¿Cual es el nombre del acudiente del estudiante?");
+                                Nombre_Acudiente = Console.ReadLine();
+
+                                if (!string.IsNullOrEmpty(Nombre_Acudiente) && !string.IsNullOrWhiteSpace(Nombre_Acudiente))
+                                {
+
+                                    //string[,] datos = new string[4, 5];
+
+                                    do
+                                    {
+
+                                        Console.WriteLine("¿Cuantos pregrados tiene el estudiante?");
+                                        ApoyoS = Console.ReadLine();
+
+                                    }
+                                    while (!int.TryParse(ApoyoS, out ApoyoI));
+
+                                    if (ApoyoI > 5)
+                                    {
+
+                                        ApoyoI = 5;
+
+                                    }
+
+                                    for (int i = 1; i <= ApoyoI; i++)
+                                    {
+
+                                        while (string.IsNullOrEmpty(Institucion) || string.IsNullOrWhiteSpace(Institucion))
+                                        {
+
+                                            Console.WriteLine("¿Cual es el nombre de la institucion de la que fue egresado?");
+                                            Institucion = Console.ReadLine();
+
+                                            if (!string.IsNullOrEmpty(Institucion) && !string.IsNullOrWhiteSpace(Institucion))
+                                            {
+
+                                                while (Año <= 2000 || Año >= 2023)
+                                                {
+
+                                                    Console.WriteLine("¿En que año fue egresado?");
+                                                    ApoyoS = Console.ReadLine();
+                                                    Año = int.Parse(ApoyoS);
+
+                                                    if (Año > 2000 && Año < 2023)
+                                                    {
+
+                                                        while (string.IsNullOrEmpty(titulo) || string.IsNullOrWhiteSpace(titulo))
+                                                        {
+
+                                                            Console.WriteLine("¿Cual es el titulo que consiguio al graduarse?");
+                                                            titulo = Console.ReadLine();
+
+                                                            if (!string.IsNullOrEmpty(titulo) && !string.IsNullOrWhiteSpace(titulo))
+                                                            {
+                                                               
+                                                                Titulos[1,i] = titulo;
+                                                                Titulos[2,i] =  ApoyoS;
+                                                                Titulos[3, i] = Institucion;
+                                                                
+                                                            }
+
+                                                            else Console.WriteLine("ERROR: Por favor ingrese un titulo");
+
+                                                        }
+
+                                                    }
+
+                                                    else Console.WriteLine("ERROR: Por favor ingrese un año valido (2001-2022)");
+
+                                                }
+
+                                            }
+
+                                            else Console.WriteLine("ERROR: Por favor ingrese un Nombre de colegio");
+
+                                        }
+
+                                    }
+
+                                    ApoyoS = Año.ToString();
+                                    F_nacimiento = ApoyoD.ToString();
+                                    ApoyoS = count_docente.ToString();
+
+                                    Postgrado postgrado = new Postgrado(Name, ApoyoS, F_nacimiento, Nombre_Acudiente, Titulos);
+
+                                    l_postgrado.Add(postgrado);
+
+                                }
+
+                                else Console.WriteLine("ERROR: Por favor ingrese un Nombre de Acudiente");
+
+                            }
+
+                        }
+
+                        else Console.WriteLine("ERROR: Por favor ingrese una fecha de nacimiento");
+
+                    }
+
+                }
+
+                else Console.WriteLine("ERROR: Por favor ingrese un nombre");
+            }
+
+            Console.WriteLine("¿Desea crear otro estudiante? \n si para continuar \n Cualquier otro texto para salir");
+            ApoyoS = Console.ReadLine();
+
+            ApoyoS = ApoyoS.ToLower();
+
+            if (ApoyoS != "si")
+            {
+
+                Console.Clear();
+                Menu_Admin();
+
+            }
+
+            else Menu_Create_Pregrado();
+
 
         }
 
