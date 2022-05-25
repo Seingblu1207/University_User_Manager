@@ -11,6 +11,7 @@ namespace Clases
     {
         static private List<Evaluacion> l_evaluacion;
         static private List<Asignatura> l_Asignatura;
+        
         public static void CargarHistoria()
         {
             var ruta = "C:\\Users\\oveor\\Desktop\\TAREASSSSS\\TEORIA DE LA COMPUTACION\\Codde\\Clases\\recursos\\TextFile2.txt";

@@ -13,6 +13,7 @@ namespace Clases
         private ushort periodo;
         private List<Evaluacion> l_evaluacion;
 
+
         public Historia(uint año, ushort periodo)
         {
             this.año = año;
