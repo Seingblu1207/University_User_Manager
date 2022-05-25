@@ -1,1 +1,21 @@
-D|NOMBRE|ID|NACIMIENTO|AREA|TITULOS...
+D|Juan Carlos Restrepo Cano|647583|17/04/1970|Matematicas Discretas|Ingeniero de Sistemas|Licenciatura en Matematicas|Ingeniero Electronico
+D|Salvatore Moreau|504177|09/06/1976|Biodiversidad|Ingeniero Ambiental|Ingeniero Civil
+D|Patrick Esteban Sanchez Garcia|983023|22/12/1963|Humanismo y cultura|Ingeniero Mecatronico|Licenciatura en Filosofía
+D|Daniel Santiago Ordoñez Duarte|783782|31/12/1980|Fisica Mecanica|Ingeniero Electronico|Licenciatura en Física
+D|Alejandro Rodriguez Diaz|461512|30/06/1972|Biologia|Licenciatura en Matemáticas|Ingeniero Biomedico
+D|Omar Ortiz Ortiz|478632|14/02/1967|Lengua y Cultura|Arquitecto|Abogado|Licenciatura en Matemáticas
+D|Alicia Jaimes Reyes|347632|23/08/1980|Fisica Mecanica|Ingeniera Biomedica|Licenciatura en Fisica
+D|Marta Lucia Barrera Vasquez|813872|12/06/1976|Derecho Penal|Abogada|Licenciatura en Literatura
+D|Liliana Martinez Diaz|237654|01/01/1983|Teoria de la computacion|Ingeniera de Sistemas|Ingeniera Electronica
+D|Sara Sofia Viviescas Caceres|664422|24/05/1982|Estructuras y Modelos|Licenciatura en Idiomas|Ingeniera Civil
+D|Laura Victoria Peñalosa Duran|230230|18/09/1978|Electromagnetismo|Ingeniera Mecatronica|Ingeniera Electronica
+P|Marisol Montenegro Cano|639940|21/02/1990|Ale Sanz Pujadas|Colegio Santa Catalina del Socorro|2006|Bachiller
+P|Mario Rodriguez Garcia|340503|20/03/1996|Miguela Garcia Caballero|Institucion Educativa Marco Fidel Suarez|2012|Bachiller
+P|Oscar Diaz Ordoñez|989728|15/10/1995|Valeria Ordoñez Alarcon|Instituto De Educacion Camilo Juarez|2011|Bachiller
+P|Julio Medina Reyes|588831|19/12/1990|Fabiola Reyes Dos-Santos|Instituto Tecnico Industrial Pascual Bravo|2006|Bachiller Tecnico en Sistema
+P|Luis Acosta Rodriguez|526867|13/06/1992|Marco Acosta Reina|Instituto Gabriela Mistral|2008|Bachiller
+P|Daniel Medina Vasquez|788234|06/03/2000|Maria Isabel Vasquez Campos|Instituto De Educacion Camilo Juarez|2016|Bachiller
+P|Mónica Rodriguez Peñalosa|713183|04/06/2001|Eduardo Rodriguez Fernandez|Academia Luciano Vazquez de Antioquia|2017|Bachiller
+P|José Medina Viviescas|623346|19/07/1998|Lidia Viviescas Almeida|Instituto Tecnico Industrial Pascual Bravo|2014|Bachiller Tecnico en Metalisteria
+P|Alicia Gutierrez Barrera|994482|24/11/1998|Ignacia Barrera Carreras|Institucion Educativa Marco Fidel Suarez|2015|Bachiller
+P|Martín Aguirre Duarte|850149|24/01/1999|Christian Aguirre Otero|Institucion Educativa Marco Fidel Suarez|2016|Bachiller

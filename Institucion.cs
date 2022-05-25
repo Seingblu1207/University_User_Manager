@@ -7,11 +7,11 @@ namespace Clases
     internal class Institucion
     {
 
-        static private List<Evaluacion> l_evaluacion;
-        static private List<Docente> l_docente;
-        static private List<Pregrado> l_pregrado;
-        static private List<Postgrado> l_postgrado;
-        static private List<Asignatura> l_Asignatura;
+        static public List<Evaluacion> l_evaluacion;
+        static public List<Docente> l_docente;
+        static public List<Pregrado> l_pregrado;
+        static public List<Postgrado> l_postgrado;
+        static public List<Asignatura> l_Asignatura;
         static public int count_docente = 0;
         static public int count_estudiante = 0;
         static Institucion Aguardiente = new Institucion();
