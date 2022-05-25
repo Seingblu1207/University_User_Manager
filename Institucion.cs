@@ -96,8 +96,7 @@ namespace Clases
                               "\n 1. Crear un nuevo docente" +
                               "\n 2. Crear un nuevo estudiante de Pregrado" +
                               "\n 3. Crear un nuevo estudiante de postgrado" +
-                              "\n 4. Crear un nuevo Historial evaluativo" +
-                              "\n 5. Crear una nueva Asignatura" +
+                              "\n 4. Crear una nueva Asignatura" +
                               "\n 0. Volver al menu anterior");
             ApoyoS = Console.ReadLine();
            
@@ -125,16 +124,13 @@ namespace Clases
 
                     case "3":
                         Console.Clear();
+                        Menu_Create_Postgrado();
                         Error = false;
                         break;
 
                     case "4":
                         Console.Clear();
-                        Error = false;
-                        break;
-
-                    case "5":
-                        Console.Clear();
+                        Menu_Create_Asignatura();
                         Error = false;
                         break;
 
@@ -233,7 +229,7 @@ namespace Clases
 
                                         Console.WriteLine("Ingrese el titulo n° " + i);
                                         ApoyoS = Console.ReadLine();
-                                        docente.L_titulos.Add(ApoyoS);
+                                        //docente.L_titulos.Add(ApoyoS);
                                         ApoyoB = false;
             
                                     }
@@ -423,6 +419,7 @@ namespace Clases
             Console.Clear();
             bool sigo = true;
             string ApoyoS = "";
+            //Postgrado postgrado;
 
 
             bool ApoyoB = true;
@@ -439,7 +436,7 @@ namespace Clases
                 int Año = 1;
                 string Institucion = "";
                 string titulo = "";
-                string[,] Titulos = new string[3, 5];
+                
 
                 ApoyoS = "";
                 DateTime ApoyoD;
@@ -483,6 +480,7 @@ namespace Clases
                                     }
                                     while (!int.TryParse(ApoyoS, out ApoyoI));
 
+                           
                                     if (ApoyoI > 5)
                                     {
 
@@ -490,8 +488,15 @@ namespace Clases
 
                                     }
 
-                                    for (int i = 1; i <= ApoyoI; i++)
+                                    string[,] Titulos = new string[3, ApoyoI];
+
+                                    for (int i = 0; i < ApoyoI; i++)
                                     {
+                                        Institucion = null;
+                                        Año = 0;
+                                        ApoyoS = null;
+                                        titulo = null;
+
 
                                         while (string.IsNullOrEmpty(Institucion) || string.IsNullOrWhiteSpace(Institucion))
                                         {
@@ -521,9 +526,9 @@ namespace Clases
                                                             if (!string.IsNullOrEmpty(titulo) && !string.IsNullOrWhiteSpace(titulo))
                                                             {
                                                                
-                                                                Titulos[1,i] = titulo;
-                                                                Titulos[2,i] =  ApoyoS;
-                                                                Titulos[3, i] = Institucion;
+                                                                Titulos[0,i] = titulo;
+                                                                Titulos[1,i] =  ApoyoS;
+                                                                Titulos[2, i] = Institucion;
                                                                 
                                                             }
 
@@ -549,9 +554,10 @@ namespace Clases
                                     F_nacimiento = ApoyoD.ToString();
                                     ApoyoS = count_docente.ToString();
 
-                                    Postgrado postgrado = new Postgrado(Name, ApoyoS, F_nacimiento, Nombre_Acudiente, Titulos);
-
-                                    l_postgrado.Add(postgrado);
+                                    Postgrado arte;
+                                    arte = new Postgrado(Name, ApoyoS, F_nacimiento, Nombre_Acudiente, Titulos);
+                                    ApoyoB = false;
+                                    //l_postgrado.Add(arte);
 
                                 }
 
@@ -570,6 +576,8 @@ namespace Clases
                 else Console.WriteLine("ERROR: Por favor ingrese un nombre");
             }
 
+            
+
             Console.WriteLine("¿Desea crear otro estudiante? \n si para continuar \n Cualquier otro texto para salir");
             ApoyoS = Console.ReadLine();
 
@@ -585,6 +593,48 @@ namespace Clases
 
             else Menu_Create_Pregrado();
 
+
+        }
+
+        public static void Menu_Create_Asignatura()
+        {
+
+            string Nombre = null;
+            string Grado = null ;
+            Asignatura asignatura;
+
+            while (string.IsNullOrEmpty(Nombre) || string.IsNullOrWhiteSpace(Nombre))
+            {
+
+                Console.WriteLine("¿Cual es el nombre del colegio del que fue egresado?");
+                Nombre = Console.ReadLine();
+
+                if (!string.IsNullOrEmpty(Nombre) && !string.IsNullOrWhiteSpace(Nombre))
+                {
+
+                    while (string.IsNullOrEmpty(Grado) || string.IsNullOrWhiteSpace(Grado))
+                    {
+
+                        Console.WriteLine("¿Cual es el titulo que consiguio al graduarse?");
+                        Grado = Console.ReadLine();
+
+                        if (!string.IsNullOrEmpty(Grado) && !string.IsNullOrWhiteSpace(Grado))
+                        {
+
+                            asignatura = new Asignatura(Nombre, Grado);
+
+                            //l_Asignatura.Add(asignatura);
+                        }
+
+                        else Console.WriteLine("ERROR: Por favor ingrese un grado");
+
+                    }
+
+                }
+
+                else Console.WriteLine("ERROR: Por favor ingrese un Nombre");
+
+            }
 
         }
 
